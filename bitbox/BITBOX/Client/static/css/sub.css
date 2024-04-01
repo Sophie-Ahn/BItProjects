@@ -1,0 +1,166 @@
+/* 게시판 */
+div.mt10 {display: flex; justify-content: flex-end;}
+div.mt10 button {margin-left: 10px;}
+.board_write_btn, .board_list_btn, .board_delete_btn, .board_edit_btn {height: 34px; text-align: center;  border-radius: 8px; float: right; margin-bottom: 8px; padding: 0 25px; color: #fff;}
+.board_delete_btn {background:#ff7602;}
+.board_edit_btn {background: #fbd107;}
+.board_write_btn, .board_list_btn {background: #0a9102;}
+.board_write_btn span,
+.board_delete_btn span,
+.board_list_btn span,
+.board_edit_btn span {color: #fff; font-size: var(--font-size-15); font-weight: 500; padding-left: 20px; position: relative;}
+.board_delete_btn span::before,
+.board_edit_btn span::before,
+.board_list_btn span::before,
+.board_write_btn span::before {content: ""; position: absolute; top:2px; left: -5px; width: 15px; height: 15px; display: inline-block;}
+
+
+/* 추가한 부분 logout_btn */
+.logout_btn {height: 34px; text-align: center;  border-radius: 8px; float: right; margin-bottom: 8px; padding: 0 25px; color: #fff;}
+.logout_btn {background:#ff7602;}
+
+
+
+.board_write_btn span::before { background: url(../../static/images/ico_pen.svg)no-repeat left center/contain;}
+.board_delete_btn span::before { background: url(../../static/images/ico_trashcan.svg)no-repeat left center/contain;}
+.board_edit_btn span::before { background: url(../../static/images/ico_pen.svg)no-repeat left center/contain;}
+.board_list_btn span::before { background: url(../../static/images/ico_board_select.svg)no-repeat left center/contain;}
+
+.boardemoji{background: url(../../static/images/board_emoji.svg)no-repeat center; background-size: cover; width:57px; height: 55px; top: -30%; right: 13%; display: inline-block; position: absolute; z-index: 1000;}
+
+.table_layout, .table_layout_write {border: 1px solid #ddd; border-radius: 8px; padding: 1px; clear: both;}
+.table_layout table, .table_layout_write table {width: 100%;}
+.table_layout tr {border-bottom: 1px solid #ddd;}
+.table_layout thead tr {background: #f2f7ef;}
+.table_layout tbody tr:last-child {border-bottom: none;}
+.table_layout tr th {font-size: var(--font-size-15); font-weight: 500; color: #222; text-align: center; padding: 10px 2px; border-right: 1px solid #ddd;}
+.table_layout tr th:last-child {border-right: none;}
+.table_layout tr td {font-size: var(--font-size-15); font-weight: 400; color: #333; text-align: center; padding: 10px; border-right: 1px solid #ddd;}
+.table_layout tr td:last-child {border-right: none;}
+.table_layout tr td:nth-child(3) {text-align: left;}
+
+.table_layout_write tr {border-bottom: 1px solid #ddd;}
+.table_layout_write tr {border-bottom: 1px solid #ddd;}
+.table_layout_write tr:last-child {border-bottom: none;}
+.table_layout_write th {background: #f2f7ef; font-size: var(--font-size-15); font-weight: 500; color: #222; text-align: center; padding: 16px 2px; border-right: 1px solid #ddd;}
+.table_layout_write td {font-size:var(--font-size-15); font-weight: 400; color: #333; padding: 16px 10px;}
+.table_layout_write td.textarea {padding: 0;}
+.table_layout_write td.textarea textarea {border: none; padding: 10px; height: 150px; width: 100%; word-break: keep-all; resize: none;}
+
+.pagination {display: flex; justify-content: center; align-items: center; margin-top: 50px;}
+.pagination .prev_btn {background: url(../../static/images/ico_arrow.svg)no-repeat center/contain; width: 12px; height: 17px; margin-right: 30px;}
+.pagination .next_btn {background: url(../../static/images/ico_arrow_right.svg)no-repeat center/contain; width: 12px; height: 17px; margin-left: 30px;}
+.pagination li a {font-size: var(--font-size-15); font-weight: 400; color: #333; padding: 3px 10px;}
+.pagination li.select a {font-size: var(--font-size-15); font-weight: 600; color:#ff7602; padding: 3px 10px}
+
+/* sub_title */
+.sub_title {margin-top: 60px; display: flex; justify-content: center; align-items: center; text-align: center; position: relative;}
+.sub_title p {color: #fff; background-color: #0a9102; padding: 12px 10px; border-radius: 8px; width: 80%; font-size: var(--font-size-17); font-weight: 500; position: relative;}
+/*.sub_title p::after {content: ""; position: absolute; bottom: 50%; right: 2%; background: #bbb; width: 70px; height: 70px; border-radius: 100%;}*/
+.sub_title p .emoji {bottom: 35%; right: 2%; width: 70px; height: 70px; position: absolute;}
+
+/* 길찾기 */
+.map_content .map_box {height: 600px; background-color: #ddd; border-radius: 0 8px 8px 0;}
+.map_content .find_road {border-right: 1px solid #e8e8e8; text-align: center;}
+.map_content .find_road a {font-size: var(--font-size-15); font-weight: 600; color: #111; display: block; width: 100%; height: 32px; line-height: 32px; padding: 10px 0 10px 15px; position: relative;}
+.map_content .find_road a::before {position: absolute; content: ""; background: #ddd; width: 18px; height: 18px; top: 16px; left: 24px;}
+.map_content > div:nth-child(2) p {font-size: var(--font-size-14); font-weight: 500; color: #333;}
+.map_content > div:nth-child(2) .w50p .box {padding: 0; border: none; box-shadow: none;}
+.map_content > div:nth-child(2) .w50p:nth-child(odd) .box {margin: 0 10px 0 0px;}
+.map_content > div:nth-child(2) .w50p:nth-child(even) .box {margin: 0 0 0 10px;}
+.map_content .place_box {background:#ddd; width: 100%; height: 120px; border-radius: 4px; overflow: hidden;}
+.map_content .place_box+span {font-size: var(--font-size-16); font-weight: 500; color: #111; margin: 8px 0 15px; display: inline-block;}
+.map_content .scroll-box {overflow-y: auto; overflow-x: hidden;}
+.map_content .scroll-box > div {height: 512px;}
+.map_marker_box {min-width: 170px;
+  max-width: 230px;
+  padding-bottom: 8px;
+  position: relative; background-color: #fff;}
+  .map_marker_box::before {position: absolute; content: ""; width: 100%; height: 100%; border: 1px solid rgb(118, 129, 168); top: -1px; left: -1px;}
+
+/* 채팅 */
+.chat_content .chat_list_box {padding: 0; height: 650px;}
+.chat_content .chat_add {padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee;}
+.chat_content .chat_add span {font-size: var(--font-size-16); font-weight: 500; color: #111;}
+.chat_content .chat_list {font-size: var(--font-size-15); font-weight: 400; color: #333; display: block; padding: 10px 20px; border-bottom: 1px solid #e8e8e8; cursor: pointer;}
+.chat_content .chat_list.select {background: #eee;}
+.chat_content > div:nth-child(2) .box {height: 650px; padding: 0;}
+.chat_content .messages {overflow-y: auto; height: 600px;}
+.chat_content .msg_box {height: 50px; border-top: 1px solid #e8e8e8; display: flex; align-items: center; justify-content: space-between; background: #e8e8e8; border-radius: 8px;}
+.chat_content .msg_box .msg_input {width: 93%; display: inline-block; height: 100%; border: none; padding: 4px 10px; background: none; }
+.chat_content .msg_box .msg_send_btn {background: url(../images/ico_btnChatMsg.svg)no-repeat center #0a9102; width: 30px; height: 30px; border-radius: 100%; text-align: center; vertical-align: middle; cursor: pointer; margin-right: 10px;}
+
+.chat_content .chat_id {font-size: var(--font-size-15);font-weight: 600;color: #0a9102;margin-bottom: 6px;margin-left: 12px;}
+.chat_content .chat_id:first-child {padding-top: 12px;}
+.chat_content .chat_msg {font-size: var(--font-size-16);font-weight: 500;color: #222;border-radius: 8px;border: 1px solid #e8e8e8;padding: 10px;margin-left: 20px; margin-bottom: 16px; display: inline-block;}
+
+/* todo */
+/* .todo_content .todo_list_box {width: 450px; height: 650px; padding: 0;}
+.todo_content .todo_category {background-color: #eee; text-align: center; text-justify: space-between; padding: 10px;}
+.todo_content .todo_inputbox{background-color: #fdf9e6; display: flex; justify-content: center;}
+.todo_content .todo_input{width: 300px; height: 30px; background-color: #fdf9e6; text-align: center; border: 1px solid #eee;} */
+
+/* 
+.todo_content .todo_list_box {height: 650px;}
+.todo_content .todo_category{background-color: #eee; text-align: center; text-justify: space-between; padding:10px;}
+.todo_content .todo_inputbox{width: 100%; background-color: #fdf9e6; display:flex; justify-content: center;}
+.todo_content .todo_input{height: 30px; background-color: #fdf9e6; text-align: center; border: 1px solid #eee;} */
+
+/* to-do */
+.todo_main{display: flex;}
+.todo_content .todo_list_box {min-width: 300px; height: 580px; margin: 20px 30px; padding: 0;}
+.todo_content .todo_category {background-color: #eee; text-align: center; text-justify: space-between; padding: 10px;}
+.todo_content .todo_category #dailyCategory {-webkit-appearance: none;-moz-appearance: none;appearance: none; width: 50px; height: 35px; text-align: center; border: 1px solid #eee; background-color: #eee; font-size: 16px; font-weight: bold; border-radius: 5px;}
+.todo_content .todo_category #dailyCategory:focus{outline: none;}
+.todo_content .todo_category #studyCategory {-webkit-appearance: none;-moz-appearance: none;appearance: none; width: 50px; height: 35px; text-align: center; border: 1px solid #eee; background-color: #eee; font-size: 16px; font-weight: bold; border-radius: 5px;}
+.todo_content .todo_category #studyCategory:focus{outline: none;}
+.todo_content .todo_category #etcCategory {-webkit-appearance: none;-moz-appearance: none;appearance: none; width: 50px; height: 35px; text-align: center; border: 1px solid #eee; background-color: #eee; font-size: 16px; font-weight: bold; border-radius: 5px;}
+.todo_content .todo_category #etcCategory:focus{outline: none;}
+.todo_content .todo_inputbox{background-color: #fdf9e6; display: flex; justify-content: center;}
+.todo_content .todo_inputbox #dailyContent {width: 200px; margin-right: 6px;}
+.todo_content .todo_inputbox #dailyContent:focus{outline: none;}
+.todo_content .todo_inputbox #studyContent {width: 200px; margin-right: 6px;}
+.todo_content .todo_inputbox #studyContent:focus{outline: none;}
+.todo_content .todo_inputbox #etcContent {width: 200px; margin-right: 6px;}
+.todo_content .todo_inputbox #etcContent:focus{outline: none;}
+.todo_content .todo_input{width: 300px; height: 42px; background-color: #fdf9e6; font-size: 13px; text-align: center; border: none;}
+.todo_content #dailyListDiv {text-align: center; margin: 5px;}
+.todo_content #dailyListDiv span {margin: 0 5px; font-size: 15px;}
+.todo_content #dailyListDiv button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+.todo_content #studyListDiv {text-align: center;  margin: 5px;}
+.todo_content #studyListDiv span {margin: 0 5px; font-size: 15px;}
+.todo_content #studyListDiv button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+.todo_content #etcListDiv {text-align: center;  margin: 5px;}
+.todo_content #etcListDiv span {margin: 0 5px; font-size: 15px;}
+.todo_content #etcListDiv button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+.todo_content #showDailyList {text-align: center; margin: 5px;}
+.todo_content #showDailyList span {margin: 0 5px; font-size: 15px;}
+.todo_content #showDailyDel button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+.todo_content #showStudyList {text-align: center;  margin: 5px;}
+.todo_content #showStudyList span {margin: 0 5px; font-size: 15px;}
+.todo_content #showStudyDel button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+.todo_content #showEtcList {text-align: center;  margin: 5px;}
+.todo_content #showEtcList span {margin: 0 5px; font-size: 15px;}
+.todo_content #showEtcDel button {color: white; background-color: #333; border-radius: 5px; padding: 5px 7px;}
+
+
+.todo-scroll {overflow-y: auto;}
+.todo-scroll > div {height: 450px; padding-top: 16px;}
+.place_box img {height: 100%; width: 100%; border-radius: 3px; -o-object-fit: contain; object-fit: contain;}
+
+/* 게시판 수정/삭제/목록 조절 */
+
+  /* 484px 이상 */
+  @media screen and (max-width: 544px) {
+    .flex-wrap{height:50px;}
+  }
+  
+/* 450px 이상 */
+@media screen and (max-width: 411px) {
+    .flex-wrap{height:66px;}
+}
+
+  /* 270px 이상 */
+  @media screen and (max-width: 354px) {
+    .flex-wrap{height:98px;}
+  }

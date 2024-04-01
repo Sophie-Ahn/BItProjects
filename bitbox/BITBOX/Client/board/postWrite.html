@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BitBox~</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script type="text/javascript"
+        src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=b2cc2127ed8271d4f203b201b1f7ba4e&libraries=services"></script>
+        <script src="../static/js/socket-client.js"></script>
+       <script src="../static/js/login/gnb.js"></script>
+       <script src="../static/js/login/login.js"></script>
+       <script src="../static/js/login/nav.js"></script>
+       <script src="../static/js/board/post.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <aside class="side_nav open" id="sideNav">
+                <div class="side_container">
+                    <div class="logo_box">
+                        <h1 class="logo">
+                            <a class="" href="index.html"></a>
+                        </h1>
+                        <span>BITBOX</span>
+                    </div>
+                    <div class="login_box" id="loginBefore">
+                        <h2>Ok~Let's Go~</h2>
+                        <button onclick="openPop()" class="login_btn" id="loginBefore">로그인</button>
+                        <p class="">비트박스에 오신 것을 환영합니다.</p>
+                      </div>
+                      <div class="login_box_after" id="loginAfter">
+                        <h2 class="">안녕하세요!</h2>
+                        <h3>비트캠프 수강생 여러분</h3>
+                        <button class="logout_btn" id="logout_btn"><span>로그아웃</span></button>
+                        <p class="">비트박스에 오신 것을 환영합니다.</p>
+                      </div>
+                    <nav class="gnb_nav">
+                        <ul class="gnb_box">
+                            <li>
+                                <a>HOME</a>
+                            </li>
+                            <li class="select">
+                                <a>게시판</a>
+                            </li>
+                            <li>
+                                <a>지도</a>
+                            </li>
+                            <li>
+                                <a>채팅</a>
+                            </li>
+                            <li>
+                                <a>할 일</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            <div class="main_box open">
+                <header class="header">
+                    <div class="user_box">
+                        <span class="hover_nav open" id="navButton">
+                            <span class="menu-line menu-line-1"></span>
+                            <span class="menu-line menu-line-2"></span>
+                            <span class="menu-line menu-line-3"></span>
+                          </span>
+                         
+                        <div class="user_img">
+                            <!-- <img src="" alt="사용자 이미지" /> -->
+                        </div>
+                        <!-- <div class="user_subject">
+					 팝업 내용 넣기 
+					</div>-->
+                    </div>
+                </header>
+
+                <main class="main">
+                    <div class="container">
+                        <section class="snb_nav mb10">
+                            <ul>
+                                <li>
+                                    <a>HOME</a>
+                                </li>
+                                <li>
+                                    <a>게시판</a>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="main_content_box">
+                            <div class="title_box">
+                                <h2 class="title orange">맛집 리스트</h2>
+                            </div>
+
+                            <div class="sub_title">
+                                <div class="boardemoji"></div>
+                                <p>
+                                    - 비트캠프 근처 맛집을 소개하고 추천하는
+                                    공간입니다. 여러분들의 맛있는 발견을
+                                    공유해주세요! -
+                                </p>
+                            </div>
+
+                            <div class="table_layout_write">
+                                <table>
+                                    <colgroup>
+                                        <col width="20%" />
+                                        <col width="80%" />
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>음식 종류</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>제목</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>작성자</th>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th>위치</th>
+                                            <td>
+                                                서울특별시 강남구
+                                                테헤란로5길 11
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>내용</th>
+                                            <td class="textarea">
+                                                <textarea name="" id=""></textarea>
+                                                <div id="map" style="width: 80%; height: 400px;"></div>
+                                                <input type="text" id="addressInput" placeholder="주소를 입력하세요" />
+                                                <button id="searchButton" onclick="searchAddress(addressInput.value)">주소 검색</button>
+                                            </td>
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="mt10">
+                                <button class="board_write_btn mb20" id="insert_post_btn">
+                                    <span>작성 완료</span>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup_page">
+        <div class="popup_layer" id="popup_layer">
+          <div class="popup_box">
+            <div style="height: 10px; width: 375px; float: top;">
+            </div>
+            <!--팝업 컨텐츠 영역-->
+            <div class="popup_cont">
+              <div class="logo_back">
+                <div class="logo_box">
+                  <h1 class="logo"></h1>
+                  <span>BITBOX</span>
+                </div>
+              </div>
+              <div class="login_box">
+                <h2>Login</h2>
+                <input type='text' id='idInput' placeholder='  아이디'>
+                <input type='password' id='passInput' placeholder='  비밀번호'>
+                <div class="showPassword"></div>
+                <button id="login_btn">로그인</button>
+                <h3>or</h3>
+                <h4>아직 계정이 없으신가요?</h4>
+                <button onclick="window.location.href = '../Client/signup/signup.html';" id="signup_btn">회원가입</button>
+                <p id="login_error">로그인 실패</p>
+                <!--팝업 버튼 영역-->
+                <div class="popup_btn" style="float: bottom; margin-bottom: 0;" id="messages">
+                  <a href="javascript:closePop();">닫기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <script src="/Client/static/js/map/map.js"></script>
+    <script src="/Client/static/js/map/rest.js"></script>
+    <script src="/Client/static/js/map/userMarker.js"></script>
+</body>
+
+</html>

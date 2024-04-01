@@ -1,0 +1,119 @@
+.calender button {
+    border: none;
+    height: 32px;
+}
+
+.calender .c_header {
+    display: flex;
+    font-size: 35px;
+    justify-content: space-between  ;
+    align-items: center;
+    padding-bottom: 5px;
+    margin: 0px 14px 12px 14px;
+    font-weight: bold;
+}
+
+.calender .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calender .yearTitle::after {
+    content: ".";
+    margin-right: 5px;
+}
+
+.calender .main {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 20px 0px 20px;
+}
+
+.calender .daies {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.calender .dates {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.calender .date {
+    text-align: center;
+    width: calc(100%/7);
+    padding: 6px 0 6px 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.calender .day {
+    text-align: center;
+    width: calc(100%/7);
+    padding: 6px 0 6px 0;
+    box-sizing: border-box;
+    color: #aaaaaa;
+    font-weight: bold;
+}
+
+.calender #sunday{color: red;}
+
+.calender .date:nth-child(7n+1) {
+    background-color: var(--sun-color);
+    color: red;
+}
+
+.calender .today {
+    position: relative;
+    border-radius: 50%;
+}
+
+.calender .today::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #e7e7e7;
+    width: 35px;
+    height: 35px;
+    z-index: -1;
+}
+
+.calender .prevBtn::before {
+    content: "<";
+}
+
+.calender .nextBtn::after {
+    content: ">";
+}
+.calender .prevBtn::before,
+.calender .nextBtn::after {
+    font-size: 35px;
+}
+
+.calender .prevBtn,
+.calender .nextBtn {
+    background-color: white;
+    width: 250px;
+    height: 40px;
+}
+
+.calender .prevBtn:hover,
+.calender .nextBtn:hover {
+    cursor: pointer;
+}
+
+.calender .prevMonthDate,
+.calender .nextMonthDate {
+    color: #aaaaaa;
+}
+
+.calender .prevBtn,
+.calender .nextBtn {
+    align-self: center; /* Btn들이 title을 기준으로 수직 중앙 정렬되도록 설정 */
+}
